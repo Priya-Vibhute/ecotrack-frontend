@@ -25,6 +25,7 @@ function Register() {
                       type="text"
                       className="form-control"
                       placeholder="Enter your full name"
+                      name='name'
                     />
                   </div>
 
@@ -34,6 +35,7 @@ function Register() {
                       type="email"
                       className="form-control"
                       placeholder="Enter your email"
+                      name='email'
                     />
                   </div>
 
@@ -43,6 +45,7 @@ function Register() {
                       type="password"
                       className="form-control"
                       placeholder="Create a password"
+                      name='password'
                     />
                   </div>
 
@@ -52,6 +55,17 @@ function Register() {
                       type="password"
                       className="form-control"
                       placeholder="Re-enter password"
+                      name="confirmPassword"
+                    />
+                  </div>
+
+                   <div className="mb-3">
+                    <label className="form-label">Phoneno</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter your email"
+                      name='phoneNo'
                     />
                   </div>
 
