@@ -1,6 +1,20 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 function Register() {
+
+
+  const {register,
+    handleSubmit,
+    watch,
+    formState:{errors}
+  }=useForm();
+
+  const onSubmit=(data)=>{
+    console.log(data);
+  }
+
+  watch("password");
   return (
     <section className="bg-light py-5">
       <div className="container">
@@ -18,7 +32,7 @@ function Register() {
               {/* Body */}
               <div className="card-body p-4">
 
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="mb-3">
                     <label className="form-label">Full Name</label>
                     <input
@@ -26,7 +40,11 @@ function Register() {
                       className="form-control"
                       placeholder="Enter your full name"
                       name='name'
+                      {...register("name",{required:"name is required"})}
                     />
+
+                   {errors.name && <small className="text-danger">{errors.name.message}</small>}
+
                   </div>
 
                   <div className="mb-3">
